@@ -28,3 +28,18 @@ sections.forEach(section => {
   section.style.transition = 'opacity 0.6s, transform 0.6s';
   observer.observe(section);
 });
+// Dark Mode (Tungi rejim) mantiqi
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+// Tugma bosilganda
+themeToggleBtn.addEventListener('click', () => {
+  // body tegiga 'dark-mode' klassini qo'shadi yoki olib tashlaydi
+  document.body.classList.toggle('dark-mode');
+  
+  // Tugma yozuvini o'zgartiradi
+  if (document.body.classList.contains('dark-mode')) {
+    themeToggleBtn.innerHTML = '☀️ Kunduzgi rejim';
+  } else {
+    themeToggleBtn.innerHTML = '🌙 Tungi rejim';
+  }
+});
